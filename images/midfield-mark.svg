@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Midfield Consulting mark</title>
+  <desc id="desc">A navy square containing a white circular frame and cyan connected nodes.</desc>
+  <rect width="256" height="256" rx="28" fill="#182744"/>
+  <circle cx="128" cy="128" r="92" fill="none" stroke="#F7FAFC" stroke-width="8"/>
+  <path d="M38 128h47M171 128h47" fill="none" stroke="#F7FAFC" stroke-width="8" stroke-linecap="round"/>
+  <path d="M128 93v28M99 128h58" fill="none" stroke="#A9EEF2" stroke-width="6" stroke-linecap="round"/>
+  <path d="M112 110 88 134M144 110 168 134M100 146 120 166M156 146 136 166" fill="none" stroke="#F7FAFC" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="128" cy="84" r="10" fill="#58DCE7"/>
+  <circle cx="96" cy="128" r="10" fill="#9BE8EC"/>
+  <circle cx="128" cy="128" r="10" fill="#9BE8EC"/>
+  <circle cx="160" cy="128" r="10" fill="#58DCE7"/>
+  <circle cx="128" cy="172" r="10" fill="#58DCE7"/>
+</svg>

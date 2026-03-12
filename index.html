@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midfield Consulting | Bespoke AI Software Services for Enterprise Workflows</title>
+  <meta
+    name="description"
+    content="Midfield Consulting builds bespoke AI software for enterprise workflows with deterministic orchestration, evaluation-first delivery, guardrails, and production observability."
+  />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --bg: #f4f8fb;
+      --bg-soft: #ecf3f7;
+      --text: #13233d;
+      --muted: #4b5f79;
+      --line: #d5e2ec;
+      --brand: #182744;
+      --brand-soft: #31486f;
+      --accent: #58dce7;
+      --accent-soft: #a9eef2;
+      --focus: #182744;
+      --maxw: 1120px;
+      --radius: 14px;
+      --shadow: 0 14px 36px rgba(24, 39, 68, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: #fff;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--line);
+      z-index: 200;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+    }
+
+    .container {
+      width: min(var(--maxw), 100% - 2rem);
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 4.5rem 0;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(1.6rem, 2.6vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .section .intro {
+      margin-top: 0.9rem;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    .top-gradient {
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 620px;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 16% 18%, rgba(88, 220, 231, 0.26), transparent 34%),
+        radial-gradient(circle at 80% 10%, rgba(24, 39, 68, 0.16), transparent 36%),
+        linear-gradient(to bottom, #eaf2f7 0%, #f4f8fb 42%, #ffffff 74%);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 85%, white 15%);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+    }
+
+    .header-row {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: var(--brand);
+      font-family: "Trebuchet MS", "Avenir Next", sans-serif;
+    }
+
+    .wordmark-logo {
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 0.8rem;
+      box-shadow: 0 10px 24px rgba(24, 39, 68, 0.18);
+    }
+
+    .main-nav {
+      display: none;
+      align-items: center;
+      gap: 1.2rem;
+      color: var(--brand-soft);
+      font-size: 0.95rem;
+    }
+
+    .main-nav a:hover {
+      color: var(--brand);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      height: 42px;
+      padding: 0 1rem;
+      font-size: 0.94rem;
+      font-weight: 600;
+      transition: 0.15s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #22365d;
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      color: var(--text);
+      background: #fff;
+    }
+
+    .btn-secondary:hover {
+      background: #f1f8fb;
+      border-color: color-mix(in srgb, var(--accent) 35%, var(--line) 65%);
+    }
+
+    .hero {
+      padding: 5.2rem 0 4rem;
+    }
+
+    .company-banner {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(236, 243, 247, 0.88), rgba(255, 255, 255, 0.78));
+    }
+
+    .company-banner-inner {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      padding: 0.8rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+      align-items: center;
+      color: var(--brand-soft);
+      font-size: 0.93rem;
+    }
+
+    .company-banner-label {
+      font-weight: 700;
+      color: var(--brand);
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--line) 76%);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--brand-soft);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 0.65rem;
+      letter-spacing: 0.01em;
+    }
+
+    .hero h1 {
+      margin: 1rem 0 0;
+      font-size: clamp(2rem, 5vw, 3.45rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      max-width: 20ch;
+    }
+
+    .hero p {
+      margin: 1.1rem 0 0;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.4vw, 1.12rem);
+    }
+
+    .hero-actions {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .trust-list {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+      color: #334155;
+      font-size: 0.94rem;
+    }
+
+    .trust-list li::before {
+      content: "\2713";
+      margin-right: 0.55rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .signal-panel {
+      border: 1px solid rgba(24, 39, 68, 0.08);
+      border-radius: calc(var(--radius) + 4px);
+      background: linear-gradient(180deg, #182744 0%, #22365d 100%);
+      color: #fff;
+      box-shadow: 0 18px 38px rgba(24, 39, 68, 0.22);
+      padding: 1.2rem 1.15rem;
+    }
+
+    .signal-title {
+      margin: 0;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-soft);
+      font-weight: 700;
+    }
+
+    .signal-panel ul {
+      margin: 0.9rem 0 0;
+      padding: 0 0 0 1rem;
+      color: rgba(247, 250, 252, 0.88);
+      display: grid;
+      gap: 0.45rem;
+      font-size: 0.94rem;
+    }
+
+    .surface {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--bg-soft);
+    }
+
+    .grid-3,
+    .grid-4,
+    .grid-2 {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.96);
+      padding: 1.1rem;
+      box-shadow: 0 1px 0 rgba(24, 39, 68, 0.04);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.3;
+    }
+
+    .card p {
+      margin: 0.6rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .flow-list {
+      margin: 0.75rem 0 0;
+      padding: 0 0 0 1rem;
+      color: #475569;
+      font-size: 0.9rem;
+      display: grid;
+      gap: 0.33rem;
+    }
+
+    .proof-list {
+      margin: 1rem 0 0;
+      padding: 0 0 0 1rem;
+      color: #334155;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .security-note {
+      margin-top: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      color: var(--brand-soft);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(236, 243, 247, 0.92));
+      font-size: 0.93rem;
+    }
+
+    .faq-wrap {
+      margin-top: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(243, 248, 251, 0.98));
+    }
+
+    details {
+      border-top: 1px solid var(--line);
+      padding: 0.9rem 1rem;
+    }
+
+    details:first-child {
+      border-top: 0;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      position: relative;
+      padding-right: 1.5rem;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: -0.05rem;
+      color: #64748b;
+      font-weight: 700;
+    }
+
+    details[open] summary::after {
+      content: "\2212";
+    }
+
+    details p {
+      margin: 0.65rem 0 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .contact-box {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-form {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.3rem;
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #cbd5e1;
+      border-radius: 9px;
+      padding: 0.62rem 0.72rem;
+      font: inherit;
+      color: var(--text);
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .error {
+      color: #b91c1c;
+      font-size: 0.82rem;
+      min-height: 1rem;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 0.2rem;
+    }
+
+    .mailto {
+      color: var(--brand-soft);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-size: 0.92rem;
+    }
+
+    .success {
+      color: #136b57;
+      font-size: 0.9rem;
+      min-height: 1.1rem;
+      margin: 0.3rem 0 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.3rem 0 2rem;
+      color: var(--brand-soft);
+      font-size: 0.9rem;
+      background: #fff;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .legal-line {
+      margin-top: 0.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #64748b;
+      display: none;
+    }
+
+    @media (min-width: 860px) {
+      .main-nav {
+        display: flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.25fr 0.75fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Midfield Consulting",
+      "description": "Bespoke AI software services for enterprise workflows with deterministic orchestration and production reliability.",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@midfieldconsulting.com"
+        }
+      ]
+    }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="top-gradient" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="container header-row">
+      <a href="#top" class="wordmark" aria-label="Midfield Consulting home">
+        <img src="/images/midfield-mark.svg" alt="" class="wordmark-logo" />
+        <span>Midfield Consulting</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#how-we-work">How we Work</a>
+        <a href="#proof">Proof</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#contact">Contact</a>
+        <a href="learn-more.html">Learn More</a>
+      </nav>
+      <a href="#contact" class="btn btn-primary" aria-label="Book a call">Book a call</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="company-banner" aria-label="Company details">
+      <div class="container company-banner-inner">
+        <span class="company-banner-label">Company Details</span>
+        <span>Midfield Consulting</span>
+        <span>US, Spain, India</span>
+      </div>
+    </section>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Bespoke AI Software Services</span>
+          <h1>AI systems for enterprise workflows that ship and hold up in production.</h1>
+          <p>
+            We build with the Prompt Manager for Enterprise Workflows and a deterministic engineering mindset:
+            clear orchestration, strict evals, guardrails, and observability from day one.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Book a call</a>
+            <a href="#capabilities" class="btn btn-secondary">See capabilities</a>
+            <a href="learn-more.html" class="btn btn-secondary">Learn More</a>
+          </div>
+          <ul class="trust-list" aria-label="Trust highlights">
+            <li>Evaluation-first</li>
+            <li>Secure-by-design</li>
+            <li>Production observability</li>
+          </ul>
+        </div>
+
+        <aside class="signal-panel" aria-label="Typical outcomes panel">
+          <p class="signal-title">Typical outcomes</p>
+          <ul>
+            <li>Faster case resolution in support and operations</li>
+            <li>Less manual reconciliation across systems</li>
+            <li>Higher data quality from documents and email flows</li>
+            <li>Lower ops load through deterministic routing</li>
+            <li>Clearer audit trails for AI-assisted actions</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="capabilities" class="section">
+      <div class="container">
+        <h2>What we do</h2>
+        <p class="intro">Practical capabilities for logistics, property, ecommerce, customer support, and internal operations.</p>
+        <div class="grid-3">
+          <article class="card">
+            <h3>AI copilots for internal workflows</h3>
+            <p>RAG + tools for repeatable internal tasks with role-aware routing.</p>
+          </article>
+          <article class="card">
+            <h3>Document + email automation</h3>
+            <p>OCR, extraction, validation, and deterministic routing into core systems.</p>
+          </article>
+          <article class="card">
+            <h3>Multimodal field ops</h3>
+            <p>Photos/video to structured work orders and actionable operational records.</p>
+          </article>
+          <article class="card">
+            <h3>LLM evaluation &amp; guardrails</h3>
+            <p>Task tests, policy checks, red-teaming, and failure-mode mitigation.</p>
+          </article>
+          <article class="card">
+            <h3>Cost &amp; latency engineering</h3>
+            <p>Caching, routing, and model mix tuned for reliability and spend control.</p>
+          </article>
+          <article class="card">
+            <h3>Integration engineering</h3>
+            <p>CRMs/ERPs, APIs, and data pipelines integrated into maintainable workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-we-work" class="section surface">
+      <div class="container">
+        <h2>How we work</h2>
+        <p class="intro">A delivery path designed for measurable progress and safe rollout.</p>
+        <div class="grid-4">
+          <article class="card">
+            <h3>1. Discover</h3>
+            <p>Map workflow and define success criteria.</p>
+            <ul class="flow-list">
+              <li>Workflow map</li>
+              <li>Success metrics</li>
+              <li>Risk register</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>2. Build</h3>
+            <p>Prototype quickly, then run a focused pilot.</p>
+            <ul class="flow-list">
+              <li>Prototype implementation</li>
+              <li>Pilot scope and test plan</li>
+              <li>Operator feedback loop</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>3. Harden</h3>
+            <p>Raise reliability with controls and visibility.</p>
+            <ul class="flow-list">
+              <li>Eval suite and regressions</li>
+              <li>Guardrails and policies</li>
+              <li>Monitoring and alerts</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>4. Operate</h3>
+            <p>Run, iterate, and hand off cleanly.</p>
+            <ul class="flow-list">
+              <li>Runbooks and docs</li>
+              <li>Iteration cadence</li>
+              <li>Ownership handoff</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Why Midfield</h2>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Determinism over demos</h3>
+            <p>Predictable behavior under production load matters more than polished prototypes.</p>
+          </article>
+          <article class="card">
+            <h3>Prompt Manager as a reusable asset</h3>
+            <p>Prompt logic is versioned, tested, and reusable across workflows.</p>
+          </article>
+          <article class="card">
+            <h3>Tooling + orchestration</h3>
+            <p>We build systems that call tools and enforce workflow state, not chatbot-only layers.</p>
+          </article>
+          <article class="card">
+            <h3>Clear ownership &amp; maintainability</h3>
+            <p>Deliverables include docs, tests, logs, and operational handoff.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof" class="section surface">
+      <div class="container">
+        <h2>Proof</h2>
+        <p class="intro">Selected outcomes from enterprise workflow programs.</p>
+        <ul class="proof-list">
+          <li>Reduced manual triage through deterministic routing in support queues.</li>
+          <li>Converted inbox-heavy document processing into structured work pipelines.</li>
+          <li>Improved data quality by validating extraction before system write-back.</li>
+          <li>Lowered operator context switching with integrated tool actions.</li>
+          <li>Improved release confidence using continuous evaluations and drift checks.</li>
+        </ul>
+        <p class="security-note">
+          Security &amp; privacy: We can work within your security constraints (VPC, SSO, audit logs). Ask us.
+        </p>
+      </div>
+    </section>
+
+    <section id="faqs" class="section">
+      <div class="container">
+        <h2>FAQs</h2>
+        <div class="faq-wrap" role="list">
+          <details>
+            <summary>Do you build custom software or just prompts?</summary>
+            <p>Both. We design prompts and build production software around them, including integrations, routing, and controls.</p>
+          </details>
+          <details>
+            <summary>What data do you need access to?</summary>
+            <p>Only what the workflow requires. We start with representative samples, process context, and strict access boundaries.</p>
+          </details>
+          <details>
+            <summary>Can you deploy on our cloud / on-prem?</summary>
+            <p>Yes. We can align deployment with your infrastructure and security model.</p>
+          </details>
+          <details>
+            <summary>How do you evaluate quality and prevent hallucinations?</summary>
+            <p>We define task-specific evaluations, run regressions, enforce guardrails, and use retrieval and policy checks where needed.</p>
+          </details>
+          <details>
+            <summary>How long does a pilot take?</summary>
+            <p>It depends on scope. Most pilots begin with one workflow and clear acceptance criteria before expansion.</p>
+          </details>
+          <details>
+            <summary>Do you support non-English languages?</summary>
+            <p>Yes. We support multilingual workflows and evaluate quality by language and task context.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-box">
+          <h2>Book a call</h2>
+          <p class="intro">Tell us what workflow you want to improve. We will suggest a practical starting point.</p>
+
+          <form id="contact-form" class="contact-form" novalidate aria-label="Contact form">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+              <p id="name-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+              <p id="email-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" autocomplete="organization" required />
+              <p id="company-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+              <p id="message-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-row">
+              <button class="btn btn-primary" type="submit">Request a consult</button>
+              <a class="mailto" href="mailto:hello@midfieldconsulting.com">Or email hello@midfieldconsulting.com</a>
+            </div>
+            <p id="form-success" class="success" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <span>© <span id="year"></span> Midfield Consulting</span>
+        <nav class="footer-links" aria-label="Legal links">
+          <a href="/privacy-policy" aria-label="Privacy policy">Privacy</a>
+          <a href="/terms-and-conditions" aria-label="Terms of service">Terms</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+      const form = document.getElementById("contact-form");
+      if (!form) return;
+
+      const fields = ["name", "email", "company", "message"];
+
+      function setError(field, message) {
+        const errorEl = document.getElementById(field + "-error");
+        const inputEl = document.getElementById(field);
+        if (errorEl) errorEl.textContent = message || "";
+        if (inputEl) {
+          if (message) {
+            inputEl.setAttribute("aria-invalid", "true");
+          } else {
+            inputEl.removeAttribute("aria-invalid");
+          }
+        }
+      }
+
+      function validateEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const success = document.getElementById("form-success");
+        if (success) success.textContent = "";
+
+        const values = {
+          name: (document.getElementById("name")?.value || "").trim(),
+          email: (document.getElementById("email")?.value || "").trim(),
+          company: (document.getElementById("company")?.value || "").trim(),
+          message: (document.getElementById("message")?.value || "").trim()
+        };
+
+        fields.forEach(function (f) { setError(f, ""); });
+
+        let hasError = false;
+
+        if (!values.name) {
+          setError("name", "Name is required.");
+          hasError = true;
+        }
+        if (!values.email) {
+          setError("email", "Email is required.");
+          hasError = true;
+        } else if (!validateEmail(values.email)) {
+          setError("email", "Enter a valid email address.");
+          hasError = true;
+        }
+        if (!values.company) {
+          setError("company", "Company is required.");
+          hasError = true;
+        }
+        if (!values.message) {
+          setError("message", "Message is required.");
+          hasError = true;
+        }
+
+        if (hasError) return;
+
+        form.reset();
+        if (success) success.textContent = "Thanks. We will reach out shortly.";
+      });
+    })();
+  </script>
+</body>
+</html>
