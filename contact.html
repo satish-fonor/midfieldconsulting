@@ -8,6 +8,13 @@
     name="description"
     content="Contact Midfield Consulting about your AI workflow, internal app, automation, or paid consultation."
   />
+  <meta property="og:title" content="Contact | Midfield Consulting" />
+  <meta property="og:description" content="Contact Midfield Consulting about an AI prototype, internal tool, automation, or paid consultation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://midfieldconsulting.com/contact.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Contact | Midfield Consulting" />
+  <meta name="twitter:description" content="Contact Midfield Consulting about an AI prototype, internal tool, automation, or paid consultation." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -27,7 +34,7 @@
         <a href="about.html">About</a>
         <a href="consultation.html">Consultation</a>
         <a href="faq.html">FAQ</a>
-        <a href="contact.html" class="is-current">Contact</a>
+        <a href="contact.html" class="is-current" aria-current="page">Contact</a>
       </nav>
       <a href="consultation.html" class="btn btn-primary">Book a consultation</a>
     </div>
@@ -39,18 +46,15 @@
         <div>
           <span class="eyebrow">Contact</span>
           <h1>Tell us what you built and where it is stuck.</h1>
-          <p>
-            Share the workflow, internal app, automation, or AI tool you are working on. A simple explanation
-            is enough. The goal is to understand where the friction is and whether a consultation makes sense.
-          </p>
+          <p>Share the workflow, internal app, automation, or AI tool you are working on. A short explanation is enough to start.</p>
         </div>
         <aside class="signal-panel" aria-label="Contact guidance">
-          <p class="signal-title">Helpful context to include</p>
+          <p class="signal-title">Helpful context</p>
           <ul>
             <li>What the tool is meant to do</li>
             <li>What part keeps failing or slowing down</li>
             <li>What systems it touches</li>
-            <li>What you want help deciding</li>
+            <li>What decision you need help with</li>
           </ul>
         </aside>
       </div>
@@ -61,7 +65,7 @@
         <div class="grid-2">
           <div class="contact-box">
             <h2>Contact form</h2>
-            <p class="intro">Use the form below to request a consultation or describe the project.</p>
+            <p class="intro">Use the form to request a consultation or describe the project.</p>
 
             <form id="contact-form" class="contact-form" novalidate aria-label="Contact form">
               <div class="field">
@@ -89,7 +93,7 @@
               </div>
 
               <div class="form-row">
-                <button class="btn btn-primary" type="submit">Send inquiry</button>
+                <button class="btn btn-primary" type="submit">Request a consultation</button>
                 <a class="mailto" href="mailto:hello@midfieldconsulting.com">Or email hello@midfieldconsulting.com</a>
               </div>
               <p id="form-success" class="success" aria-live="polite"></p>
@@ -97,20 +101,19 @@
           </div>
 
           <div class="contact-box">
-            <h2>What happens next</h2>
-            <p class="intro">The first step is usually to determine whether a 30 minute or 60 minute consultation is the right fit.</p>
+            <h2>Other contact paths</h2>
+            <p class="intro">If you prefer email, use the address that fits best.</p>
             <div class="grid-1">
               <article class="card">
-                <h3>Good first messages usually include</h3>
+                <h3>Email options</h3>
                 <ul class="bullet-list">
-                  <li>What you built</li>
-                  <li>What is currently breaking or slowing you down</li>
-                  <li>Whether you want advice, cleanup, or a second opinion</li>
-                  <li>Any specific question you want answered first</li>
+                  <li><a class="mailto" href="mailto:hello@midfieldconsulting.com">hello@midfieldconsulting.com</a></li>
+                  <li><a class="mailto" href="mailto:consult@midfieldconsulting.com">consult@midfieldconsulting.com</a></li>
+                  <li><a class="mailto" href="mailto:sales@midfieldconsulting.com">sales@midfieldconsulting.com</a></li>
                 </ul>
               </article>
             </div>
-            <p class="security-note">If you would rather start by email, that is completely fine. A short plain-language note is enough to begin.</p>
+            <p class="security-note">The first step is often a 30 minute consultation for $50 or a 60 minute consultation for $100. Satisfaction guaranteed.</p>
           </div>
         </div>
       </div>
@@ -137,11 +140,16 @@
             <a href="privacy-policy/">Privacy</a>
             <a href="terms-and-conditions/">Terms</a>
           </nav>
+          <div class="footer-contact" aria-label="Email contacts">
+            <a href="mailto:hello@midfieldconsulting.com">hello@midfieldconsulting.com</a>
+            <a href="mailto:consult@midfieldconsulting.com">consult@midfieldconsulting.com</a>
+            <a href="mailto:sales@midfieldconsulting.com">sales@midfieldconsulting.com</a>
+          </div>
         </div>
       </div>
       <div class="footer-note">
         <span>© <span id="year"></span> Midfield Consulting</span>
-        <span>Founder-led consulting for AI tools, internal apps, and business workflows.</span>
+        <span>30 minute consultation - $50. 60 minute consultation - $100. Satisfaction guaranteed.</span>
       </div>
     </div>
   </footer>
