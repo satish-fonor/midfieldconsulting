@@ -717,6 +717,150 @@ footer {
   font-size: 0.92rem;
 }
 
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 1.2rem;
+  color: var(--brand);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.back-link::before {
+  content: "\2190";
+  color: var(--accent);
+}
+
+.article-shell {
+  max-width: 760px;
+}
+
+.article-shell h1 {
+  max-width: 13ch;
+}
+
+.article-subtitle {
+  margin-top: 1.2rem;
+  max-width: 44ch;
+  color: var(--muted);
+  font-size: clamp(1.08rem, 1.8vw, 1.24rem);
+}
+
+.article-meta {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.article-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.68rem 0.92rem;
+  border: 1px solid rgba(218, 210, 199, 0.96);
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.86);
+  box-shadow: var(--shadow-sm);
+  color: var(--brand);
+  font-size: 0.9rem;
+}
+
+.article-meta span::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--accent);
+  flex: 0 0 0.45rem;
+}
+
+.article-layout {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.article-content {
+  display: grid;
+  gap: 2rem;
+}
+
+.article-block {
+  border: 1px solid rgba(218, 210, 199, 0.96);
+  border-radius: var(--radius);
+  background: rgba(255, 253, 249, 0.96);
+  padding: clamp(1.3rem, 2vw, 1.8rem);
+  box-shadow: var(--shadow-sm);
+}
+
+.article-block h2 {
+  margin: 0;
+  max-width: none;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(1.8rem, 2.6vw, 2.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.article-block p + p {
+  margin-top: 1rem;
+}
+
+.article-block p,
+.article-block li {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.article-list {
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.article-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.article-list li::before {
+  content: "\2022";
+  color: var(--accent);
+  flex: 0 0 auto;
+}
+
+.article-quote {
+  margin: 1.2rem 0 0;
+  padding: 1.1rem 1.2rem;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 18px 18px 0;
+  background: rgba(239, 225, 206, 0.45);
+  color: var(--brand);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.35;
+}
+
+.article-cta {
+  padding-top: 0;
+}
+
+@media (min-width: 860px) {
+  .article-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
+    align-items: start;
+  }
+
+  .article-layout .signal-panel {
+    position: sticky;
+    top: 6.6rem;
+  }
+}
+
 @media (min-width: 860px) {
   .hero-grid,
   .page-hero-grid {
