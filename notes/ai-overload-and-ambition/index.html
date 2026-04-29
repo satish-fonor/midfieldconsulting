@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18115671427"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18115671427');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Overload and Ambition | Midfield Consulting</title>
+  <meta
+    name="description"
+    content="A Midfield field note on how AI makes software easier to start, but still overwhelms builders with scope, tooling, and operational friction."
+  />
+  <link rel="canonical" href="https://midfieldconsulting.com/notes/ai-overload-and-ambition/" />
+  <meta property="og:title" content="AI Overload and Ambition | Midfield Consulting" />
+  <meta property="og:description" content="A plain-language field note on AI overload, ambition inflation, tooling sprawl, and why momentum dies before prototypes become usable software." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://midfieldconsulting.com/notes/ai-overload-and-ambition/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="AI Overload and Ambition | Midfield Consulting" />
+  <meta name="twitter:description" content="A field note on how AI lowers the barrier to building, while still exhausting people before software becomes usable." />
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;
+    n.push=n;
+    n.loaded=!0;
+    n.version="2.0";
+    n.queue=[];
+    t=b.createElement(e);
+    t.async=!0;
+    t.src=v;
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document, "script",
+    "https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init", "1493006535822580");
+    fbq("track", "PageView");
+  </script>
+</head>
+<body>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1493006535822580&ev=PageView&noscript=1" alt="" /></noscript>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="top-gradient" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="container header-row">
+      <a href="/" class="wordmark" aria-label="Midfield Consulting home">
+        <img src="../../images/midfield-mark.svg" alt="" class="wordmark-logo" />
+        <span>Midfield Consulting</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/field-notes/" class="is-current" aria-current="page">Field notes</a>
+        <a href="/about.html">About</a>
+        <a href="/consultation.html">Consultation</a>
+        <a href="/faq.html">FAQ</a>
+      </nav>
+      <a href="/consultation.html" class="btn btn-primary">Book a consultation</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container article-shell">
+        <a href="/field-notes/" class="back-link">Back to field notes</a>
+        <span class="eyebrow">Field Note</span>
+        <h1>AI Overload and Ambition</h1>
+        <p class="article-subtitle">A field note on how AI makes software easier to start than ever, while still exhausting builders long before the prototype becomes usable.</p>
+        <div class="article-meta" aria-label="Article context">
+          <span>For founders and operators</span>
+          <span>About momentum and scope</span>
+          <span>Focused on early AI projects</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container article-layout">
+        <div class="article-content">
+          <article class="article-block">
+            <h2>AI makes the start feel unbelievably accessible</h2>
+            <p>A few months ago, building software meant you needed engineers, funding, and a lot of patience.</p>
+            <p>Today, someone with an idea can sit down on a Sunday afternoon and build something real with OpenAI, Anthropic, and a browser.</p>
+            <p>That part is genuinely amazing.</p>
+          </article>
+
+          <article class="article-block">
+            <h2>But the same pattern keeps showing up</h2>
+            <p>People get excited.</p>
+            <p>They start building.</p>
+            <p>Then slowly the energy drains away.</p>
+            <p>Not because the idea was bad.</p>
+            <p>Not because they were not smart enough.</p>
+            <p>It happens because the path from prototype to usable software is still full of traps.</p>
+          </article>
+
+          <article class="article-block">
+            <h2>One trap is sheer volume</h2>
+            <p>The AI gives you everything.</p>
+            <p>Massive answers. Massive plans. Massive architecture diagrams.</p>
+            <p>At first it feels impressive.</p>
+            <p>Then your eyes glaze over.</p>
+            <p>You stop reading carefully and start skimming.</p>
+            <p>I do it too.</p>
+          </article>
+
+          <article class="article-block">
+            <h2>Another trap is ambition inflation</h2>
+            <p>Someone says:</p>
+            <p class="article-quote">"I want to build a platform that can scale to a million users."</p>
+            <p>Which sounds reasonable.</p>
+            <p>But suddenly the AI proposes distributed systems, event buses, Kubernetes clusters, microservices, observability stacks, vector databases, CI/CD pipelines, and multi-region failover.</p>
+            <p>You went in wanting to test an idea.</p>
+            <p>Now it feels like you are planning a moon landing.</p>
+            <p>So the project quietly dies.</p>
+          </article>
+
+          <article class="article-block">
+            <h2>Then comes the tooling spiral</h2>
+            <p>You ask:</p>
+            <p class="article-quote">"How do I make this production ready?"</p>
+            <p>And now you are signing up for Amazon Web Services, Supabase, GitHub, monitoring tools, auth tools, email tools, vector databases, workflow engines, and more.</p>
+            <p>A few weeks later you are paying hundreds of dollars a month for services you barely understand yet.</p>
+            <p>And the unsettling part is that you are not even fully sure what will break if you cancel something.</p>
+          </article>
+
+          <article class="article-block">
+            <h2>Tiny technical problems do real emotional damage</h2>
+            <p>Not the hard problems.</p>
+            <p>The stupid ones.</p>
+            <ul class="article-list">
+              <li>A broken SSL certificate</li>
+              <li>A deployment issue</li>
+              <li>One missing environment variable</li>
+              <li>A Docker port mismatch</li>
+              <li>A redirect loop</li>
+            </ul>
+            <p>These are the kinds of things that can be fixed.</p>
+            <p>Eventually.</p>
+            <p>But instead of taking five minutes, they consume an entire day.</p>
+            <p>And that day matters because momentum matters.</p>
+          </article>
+
+          <article class="article-block">
+            <h2>Most early projects die from exhaustion, not technology</h2>
+            <p>Most early projects do not die because of technology.</p>
+            <p>They die because the builder gets exhausted.</p>
+            <p>That is the part I think the industry still underestimates.</p>
+            <p>We are entering a world where millions of people can finally express ideas that previously stayed trapped in their heads.</p>
+            <p>That is a beautiful thing.</p>
+            <p class="article-quote">It would be a shame if those ideas dissolved into: "I almost built something once."</p>
+          </article>
+        </div>
+
+        <aside class="signal-panel" aria-label="Key takeaway">
+          <p class="signal-title">Central idea</p>
+          <ul>
+            <li>AI dramatically lowers the barrier to starting software projects.</li>
+            <li>Builders still lose momentum through overload, inflated scope, and fragile tooling.</li>
+            <li>Early-stage failure is often emotional and operational, not purely technical.</li>
+            <li>Keeping ambition small and momentum intact is a real advantage.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section article-cta">
+      <div class="container">
+        <div class="cta-panel">
+          <h2>Bring the promising prototype before the momentum disappears</h2>
+          <p>If an AI project already showed signs of life but now feels buried under scope, tools, or operational friction, Midfield can help narrow it back to something usable and worth continuing.</p>
+          <div class="cta-meta" aria-label="Consultation options">
+            <span>30 minute consultation - $50</span>
+            <span>60 minute consultation - $100</span>
+            <span>Satisfaction guaranteed</span>
+          </div>
+          <div class="button-row">
+            <a href="/consultation.html" class="btn btn-primary">Book a consultation</a>
+            <a href="/" class="btn btn-secondary">Back to home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <a href="/" class="wordmark footer-wordmark" aria-label="Midfield Consulting home">
+          <img src="../../images/midfield-mark.svg" alt="" class="wordmark-logo" />
+          <span>Midfield Consulting</span>
+        </a>
+        <div class="footer-navs">
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="/">Home</a>
+            <a href="/services.html">Services</a>
+            <a href="/field-notes/">Field notes</a>
+            <a href="/about.html">About</a>
+            <a href="/consultation.html">Consultation</a>
+            <a href="/faq.html">FAQ</a>
+          </nav>
+          <nav class="footer-links" aria-label="Legal links">
+            <a href="/privacy-policy/">Privacy</a>
+            <a href="/terms-and-conditions/">Terms</a>
+          </nav>
+          <div class="footer-contact" aria-label="Email contacts">
+            <a href="mailto:hello@midfieldconsulting.com">hello@midfieldconsulting.com</a>
+            <a href="mailto:consult@midfieldconsulting.com">consult@midfieldconsulting.com</a>
+            <a href="mailto:sales@midfieldconsulting.com">sales@midfieldconsulting.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-note">
+        <span>© <span id="year"></span> Midfield Consulting</span>
+        <span>30 minute consultation - $50. 60 minute consultation - $100. Satisfaction guaranteed.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../site.js"></script>
+</body>
+</html>
